@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+	<script type="text/javascript">
+		
+$.ajax({
+	url: '/getData',
+	method: 'get',
+	dataType: 'json',
+	success: function(response){
+		console.log(response);
+		var div = $("<div>",{
+			text: response.name
+		});
+		var pic = $("<img>",{
+			src: response.favoritePicture
+		});
+		div.append(pic);
+		$("body").append(div);
+	}
+})
+	</script>
+</head>
+<body>
+Hello, world
+<img src="http://www.hastingschess.com/wp-content/uploads/2015/12/Lego_Chess_4-465x348-300x225.jpg	">
+</body>
+</html>
